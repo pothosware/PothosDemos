@@ -393,7 +393,7 @@
                     "properties" : [
                         {
                             "key" : "type",
-                            "value" : "\"LOW_PASS\""
+                            "value" : "\"SINC\""
                         },
                         {
                             "key" : "band",
@@ -429,7 +429,7 @@
                         },
                         {
                             "key" : "numTaps",
-                            "value" : "51"
+                            "value" : "31"
                         },
                         {
                             "key" : "alpha",
@@ -445,9 +445,9 @@
                         }
                     ],
                     "rotation" : 0,
-                    "selected" : false,
+                    "selected" : true,
                     "what" : "Block",
-                    "zValue" : 217
+                    "zValue" : 254
                 },
                 {
                     "affinityZone" : "",
@@ -1169,6 +1169,20 @@
                             "size" : 1
                         },
                         {
+                            "alias" : "setGlobalSettings",
+                            "dtype" : "unspecified",
+                            "isSigSlot" : true,
+                            "name" : "setGlobalSettings",
+                            "size" : 1
+                        },
+                        {
+                            "alias" : "setGlobalSetting",
+                            "dtype" : "unspecified",
+                            "isSigSlot" : true,
+                            "name" : "setGlobalSetting",
+                            "size" : 1
+                        },
+                        {
                             "alias" : "setFrequency",
                             "dtype" : "unspecified",
                             "isSigSlot" : true,
@@ -1215,6 +1229,20 @@
                             "dtype" : "unspecified",
                             "isSigSlot" : true,
                             "name" : "setDCOffsetAdjust",
+                            "size" : 1
+                        },
+                        {
+                            "alias" : "setChannelSettings",
+                            "dtype" : "unspecified",
+                            "isSigSlot" : true,
+                            "name" : "setChannelSettings",
+                            "size" : 1
+                        },
+                        {
+                            "alias" : "setChannelSetting",
+                            "dtype" : "unspecified",
+                            "isSigSlot" : true,
+                            "name" : "setChannelSetting",
                             "size" : 1
                         },
                         {
@@ -1796,6 +1824,14 @@
                         {
                             "key" : "gpioConfig",
                             "value" : "{}"
+                        },
+                        {
+                            "key" : "globalSettings",
+                            "value" : "{}"
+                        },
+                        {
+                            "key" : "channelSettings",
+                            "value" : "{}"
                         }
                     ],
                     "rotation" : 0,
@@ -1848,6 +1884,13 @@
                             "dtype" : "unspecified",
                             "isSigSlot" : true,
                             "name" : "setWindowType",
+                            "size" : 1
+                        },
+                        {
+                            "alias" : "setFullScale",
+                            "dtype" : "unspecified",
+                            "isSigSlot" : true,
+                            "name" : "setFullScale",
                             "size" : 1
                         },
                         {
@@ -1933,6 +1976,14 @@
                         {
                             "key" : "windowArgs",
                             "value" : "[]"
+                        },
+                        {
+                            "key" : "fullScale",
+                            "value" : "1.0"
+                        },
+                        {
+                            "key" : "fftMode",
+                            "value" : "\"AUTO\""
                         },
                         {
                             "key" : "timeSpan",
