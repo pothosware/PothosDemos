@@ -1,0 +1,17 @@
+{
+    "blocks" : [
+        {
+            "id" : "Source",
+            "path" : "/demos/fluffy_source2",
+            "args" : []
+        },
+        {
+            "id" : "Sink",
+            "path" : "/demos/fluffy_sink1",
+            "args" : []
+        }
+    ],
+    "connections" : [
+        ["Source", 0, "Sink", 0]
+    ]
+}

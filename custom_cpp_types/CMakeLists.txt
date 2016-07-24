@@ -7,12 +7,32 @@ project(CustomCppTypes CXX)
 find_package(Pothos CONFIG REQUIRED)
 
 ########################################################################
-# Build module
+# C++ blocks + type
 ########################################################################
 POTHOS_MODULE_UTIL(
     TARGET CustomCppTypes
     SOURCES
         FluffyData.cpp
+        FluffySource1.cpp
+        FluffySource2.cpp
+        FluffySink1.cpp
+        FluffySink2.cpp
     DESTINATION demos
     #ENABLE_DOCS
+)
+
+########################################################################
+# Python blocks
+########################################################################
+POTHOS_PYTHON_UTIL(
+    TARGET CustomTypesPython
+    SOURCES
+        __init__.py
+        FluffySource.py
+        FluffySink.py
+    FACTORIES
+        "/demos/fluffy_source_py:FluffySource"
+        "/demos/fluffy_sink_py:FluffySink"
+    DESTINATION demos
+    ENABLE_DOCS
 )
