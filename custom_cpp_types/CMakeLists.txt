@@ -5,6 +5,7 @@ cmake_minimum_required(VERSION 2.8.9)
 project(CustomCppTypes CXX)
 
 find_package(Pothos CONFIG REQUIRED)
+include(PothosPythonUtil)
 
 ########################################################################
 # C++ blocks + type
@@ -34,5 +35,5 @@ POTHOS_PYTHON_UTIL(
         "/demos/fluffy_source_py:FluffySource"
         "/demos/fluffy_sink_py:FluffySink"
     DESTINATION demos
-    ENABLE_DOCS
+    #ENABLE_DOCS
 )
