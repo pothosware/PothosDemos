@@ -29,7 +29,7 @@ public:
 
         //print the data
         std::cout << "FluffySink2: fluff=" << data.call<int>("getFluff") << std::endl;
-        std::cout << "FluffySink2: wiggles=" << data.call<std::string>("get:wiggles") << std::endl;
+        std::cout << "FluffySink2: wiggles=" << data.get<std::string>("wiggles") << std::endl;
     }
 
 private:

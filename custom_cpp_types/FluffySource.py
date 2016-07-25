@@ -11,7 +11,7 @@ class FluffySource(Pothos.Block):
 
         #setup the data
         FluffyDataClass = self._env.findProxy("FluffyData")
-        data = FluffyDataClass.new(3)
+        data = FluffyDataClass(3)
         data.wiggles = "Wiggle3"
 
         #produce the data as a message

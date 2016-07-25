@@ -21,8 +21,8 @@ public:
 
         //setup the data
         auto FluffyDataClass = _env->findProxy("FluffyData");
-        auto data = FluffyDataClass.callProxy("new", 2);
-        data.callVoid("set:wiggles", "Wiggle2");
+        auto data = FluffyDataClass(2);
+        data.set("wiggles", "Wiggle2");
 
         //produce the data as a message
         outPort->postMessage(_env->convertProxyToObject(data));

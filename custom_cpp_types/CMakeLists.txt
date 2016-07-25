@@ -18,7 +18,7 @@ POTHOS_MODULE_UTIL(
         FluffySource2.cpp
         FluffySink1.cpp
         FluffySink2.cpp
-    DESTINATION demos
+    DESTINATION PothosDemos
     #ENABLE_DOCS
 )
 
@@ -34,6 +34,6 @@ POTHOS_PYTHON_UTIL(
     FACTORIES
         "/demos/fluffy_source_py:FluffySource"
         "/demos/fluffy_sink_py:FluffySink"
-    DESTINATION demos
+    DESTINATION PothosDemos
     #ENABLE_DOCS
 )
