@@ -15,5 +15,5 @@ class FluffySink(Pothos.Block):
         data = inPort.popMessage()
 
         #print the data
-        print("FluffySink2: fluff=%d"%data.getFluff())
-        print("FluffySink2: wiggles=%s"%data.wiggles)
+        print("FluffySinkPy: fluff=%d"%data.getFluff())
+        print("FluffySinkPy: wiggles=%s"%data.wiggles)
