@@ -10,8 +10,8 @@ class FluffySource(Pothos.Block):
         outPort = self.output(0)
 
         #setup the data
-        FluffyDataClass = self._env.findProxy("FluffyData")
-        data = FluffyDataClass(3)
+        FluffyData = self._env.findProxy("FluffyData")
+        data = FluffyData(3)
         data.wiggles = "Wiggle3"
 
         #produce the data as a message

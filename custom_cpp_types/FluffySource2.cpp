@@ -20,12 +20,12 @@ public:
         auto outPort = this->output(0);
 
         //setup the data
-        auto FluffyDataClass = _env->findProxy("FluffyData");
-        auto data = FluffyDataClass(2);
+        auto FluffyData = _env->findProxy("FluffyData");
+        auto data = FluffyData(2);
         data.set("wiggles", "Wiggle2");
 
         //produce the data as a message
-        outPort->postMessage(_env->convertProxyToObject(data));
+        outPort->postMessage(data.toObject());
     }
 
 private:

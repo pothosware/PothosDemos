@@ -25,7 +25,7 @@ public:
 
         //extract the data
         const auto msg = inPort->popMessage();
-        const auto data = _env->convertObjectToProxy(msg);
+        const auto data = _env->makeProxy(msg);
 
         //print the data
         std::cout << "FluffySink2: fluff=" << data.call<int>("getFluff") << std::endl;
