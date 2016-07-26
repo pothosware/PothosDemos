@@ -1,8 +1,14 @@
-# Custom C++ Type demo
+# Custom Types demo
 
 A family of blocks may employ the use of custom data types as messages.
-This demonstration shows how type registration and type serialization
-can be used with a custom data type to cross process and language boundaries.
+This demonstration shows how type registration and the Pothos::Proxy abstraction
+can be used with custom defined data types in both Python modules and C++ classes
+to cross language boundaries, and to work with types without class definitions.
+
+This demo provides a simple CMake build script to build and install the project.
+Several source and sink blocks and custom type definitions come with the projects,
+as well as a test runner to connect and run any pair of source and sink blocks.
+The goal is to demonstrate the concepts, the use of the API, and functionality.
 
 ## Custom C++ Type FluffyData
 
