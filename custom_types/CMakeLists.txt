@@ -14,9 +14,9 @@ POTHOS_MODULE_UTIL(
     TARGET CustomTypesCpp
     SOURCES
         FluffyData.cpp
-        FluffySource1.cpp
+        FluffySource.cpp
         FluffySource2.cpp
-        FluffySink1.cpp
+        FluffySink.cpp
         FluffySink2.cpp
         SpikeySource.cpp
         SpikeySink.cpp

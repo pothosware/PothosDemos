@@ -2,15 +2,15 @@
 #include "FluffyData.hpp" //use class definition in sink version 1
 #include <iostream>
 
-class FluffySink1 : public Pothos::Block
+class FluffySink : public Pothos::Block
 {
 public:
     static Block *make(void)
     {
-        return new FluffySink1();
+        return new FluffySink();
     }
 
-    FluffySink1(void)
+    FluffySink(void)
     {
         this->setupInput(0);
     }
@@ -27,10 +27,10 @@ public:
         const auto &data = msg.extract<FluffyData>();
 
         //print the data
-        std::cout << "FluffySink1: fluff=" << data.getFluff() << std::endl;
-        std::cout << "FluffySink1: wiggles=" << data.wiggles << std::endl;
+        std::cout << "FluffySink: fluff=" << data.getFluff() << std::endl;
+        std::cout << "FluffySink: wiggles=" << data.wiggles << std::endl;
     }
 };
 
-static Pothos::BlockRegistry registerFluffySink1(
-    "/demos/fluffy_sink1", &FluffySink1::make);
+static Pothos::BlockRegistry registerFluffySink(
+    "/demos/fluffy_sink", &FluffySink::make);

@@ -22,8 +22,8 @@ public:
         //setup the data
         auto DemoModule = _env->findProxy("PothosDemosCustomTypes");
         auto SpikeyData = DemoModule.get("SpikeyData");
-        auto data = SpikeyData(4);
-        data.set("ouch", "Ouch4");
+        auto data = SpikeyData(5);
+        data.set("ouch", "Ouch5");
 
         //produce the data as a message
         outPort->postMessage(data);

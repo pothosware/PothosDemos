@@ -1,15 +1,15 @@
 #include <Pothos/Framework.hpp>
 #include "FluffyData.hpp" //use class definition in source version 1
 
-class FluffySource1 : public Pothos::Block
+class FluffySource : public Pothos::Block
 {
 public:
     static Block *make(void)
     {
-        return new FluffySource1();
+        return new FluffySource();
     }
 
-    FluffySource1(void)
+    FluffySource(void)
     {
         this->setupOutput(0);
     }
@@ -27,5 +27,5 @@ public:
     }
 };
 
-static Pothos::BlockRegistry registerFluffySource1(
-    "/demos/fluffy_source1", &FluffySource1::make);
+static Pothos::BlockRegistry registerFluffySource(
+    "/demos/fluffy_source", &FluffySource::make);
