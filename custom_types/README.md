@@ -22,6 +22,20 @@ can be interacted with using the Pothos::Proxy abstraction.
 * FluffySink2.cpp - consumes and prints FluffySource with the class registration
 * FluffySource.py - produces FluffySource in python
 * FluffySink.py - consumes and prints FluffySource in python
+* FluffyRemote.cpp - app to exchange FluffyData over a network
+
+## Remote example with FluffyData
+
+On the server:
+```
+PothosUtil --proxy-server=""
+```
+
+On the client:
+```
+cd build
+./FluffyRemote tcp://localhost
+```
 
 ## Custom Python Type SpikeyData
 

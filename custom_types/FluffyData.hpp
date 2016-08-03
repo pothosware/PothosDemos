@@ -1,8 +1,15 @@
 #pragma once
+#include <Pothos/Config.hpp>
 #include <string>
 
+#ifdef FluffyData_EXPORTS
+#define FluffyData_API POTHOS_HELPER_DLL_EXPORT
+#else
+#define FluffyData_API POTHOS_HELPER_DLL_IMPORT
+#endif
+
 //! FluffyData is a made up class to demonstrate type registration
-class FluffyData
+class FluffyData_API FluffyData
 {
 public:
 

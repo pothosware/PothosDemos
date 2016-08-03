@@ -4,16 +4,23 @@
 cmake_minimum_required(VERSION 2.8.9)
 project(CustomTypes CXX)
 
-find_package(Pothos CONFIG REQUIRED)
+find_package(Pothos "0.4.0" CONFIG REQUIRED)
 include(PothosPythonUtil)
 
 ########################################################################
-# C++ blocks + type
+# C++ type library
+########################################################################
+include_directories(${Pothos_INCLUDE_DIRS})
+add_library(FluffyData SHARED FluffyData.cpp)
+target_link_libraries(FluffyData ${Pothos_LIBRARIES})
+install(TARGETS FluffyData DESTINATION lib)
+
+########################################################################
+# C++ blocks
 ########################################################################
 POTHOS_MODULE_UTIL(
     TARGET CustomTypesCpp
     SOURCES
-        FluffyData.cpp
         FluffySource.cpp
         FluffySource2.cpp
         FluffySink.cpp
@@ -21,6 +28,7 @@ POTHOS_MODULE_UTIL(
         SpikeySource.cpp
         SpikeySink.cpp
     DESTINATION PothosDemos
+    LIBRARIES FluffyData
     #ENABLE_DOCS
 )
 
@@ -44,3 +52,10 @@ POTHOS_PYTHON_UTIL(
     DESTINATION PothosDemosCustomTypes
     #ENABLE_DOCS
 )
+
+########################################################################
+# Remote executables
+########################################################################
+include_directories(${Pothos_INCLUDE_DIRS})
+add_executable(FluffyRemote FluffyRemote.cpp)
+target_link_libraries(FluffyRemote ${Pothos_LIBRARIES} FluffyData)
