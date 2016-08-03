@@ -45,23 +45,33 @@ static auto managedFluffyData = Pothos::ManagedClass()
  * Serialization hooks allow FluffyData to be passed over a socket.
  **********************************************************************/
 #include <Pothos/Object/Serialize.hpp>
+#include <iostream>
 
 namespace Pothos { namespace serialization {
 template <class Archive>
 void save(Archive & ar, const FluffyData &t, const unsigned int)
 {
-    ar << t.getFluff();
+    std::cout << "save FluffyData" << std::endl;
+    const int fluff(t.getFluff());
+    ar << fluff;
     ar << t.wiggles;
 }
 
 template <class Archive>
 void load(Archive & ar, FluffyData &t, const unsigned int)
 {
+    std::cout << "load FluffyData" << std::endl;
     int fluff(0);
     ar >> fluff;
     t = FluffyData(fluff);
     ar >> t.wiggles;
 }
+
+template <class Archive>
+void serialize(Archive & ar, FluffyData &t, const unsigned int version)
+{
+    Pothos::serialization::split_free(ar, t, version);
+}
 }}
 
-POTHOS_SERIALIZATION_SPLIT_FREE(FluffyData)
+POTHOS_OBJECT_SERIALIZE(FluffyData)
