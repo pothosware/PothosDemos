@@ -1,7 +1,7 @@
 #include <Pothos/Init.hpp>
 #include <Pothos/Proxy.hpp>
 #include <Pothos/Remote.hpp>
-#include "FluffyData.hpp" //use class definition in demo pt2
+#include "FluffyData.hpp" //only needed for one of the snippets
 #include <iostream>
 #include <cstdlib>
 
@@ -22,18 +22,22 @@ void demo(const std::string &uri)
     std::cout << "FluffyRemote: fluff=" << remoteData.call<int>("getFluff") << std::endl;
     std::cout << "FluffyRemote: wiggles=" << remoteData.get<std::string>("wiggles") << std::endl;
 
-    //get a FluffyData locally
+    //get a FluffyData locally using the FluffyData class definition
+    //only this code snippet needs the #include "FluffyData.hpp"
     auto localData = remoteData.convert<FluffyData>();
     std::cout << "FluffyLocal: fluff=" << localData.getFluff() << std::endl;
     std::cout << "FluffyLocal: wiggles=" << localData.wiggles << std::endl;
 
-    //copy into a second remote object
+    //copy the local data back into a second remote object
+    //and make a change to the copy on the remote end
     auto remoteData2 = env->makeProxy(localData);
     remoteData2.callVoid("setFluff", 987);
     std::cout << "FluffyRemote2: fluff=" << remoteData2.call<int>("getFluff") << std::endl;
     std::cout << "FluffyRemote2: wiggles=" << remoteData2.get<std::string>("wiggles") << std::endl;
 
-    //get a FluffyData locally
+    //get a FluffyData locally from the second remote object
+    //this time we get the data as an opaque object
+    //and put it into a local proxy to be accessed
     auto localEnv = Pothos::ProxyEnvironment::make("managed");
     auto localData2 = localEnv->makeProxy(remoteData2.toObject());
     std::cout << "FluffyLocal2: fluff=" << localData2.call<int>("getFluff") << std::endl;
