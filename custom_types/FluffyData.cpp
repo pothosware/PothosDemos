@@ -66,12 +66,7 @@ void load(Archive & ar, FluffyData &t, const unsigned int)
     t = FluffyData(fluff);
     ar >> t.wiggles;
 }
-
-template <class Archive>
-void serialize(Archive & ar, FluffyData &t, const unsigned int version)
-{
-    Pothos::serialization::split_free(ar, t, version);
-}
 }}
 
+POTHOS_SERIALIZATION_SPLIT_FREE(FluffyData)
 POTHOS_OBJECT_SERIALIZE(FluffyData)
