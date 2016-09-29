@@ -37,3 +37,9 @@ cd pothos-demos/jit_cpp_block
 mkdir -p /usr/local/share/Pothos/modules/examples
 cp -r . /usr/local/share/Pothos/modules/examples/simple_float_adder
 ```
+
+## Running
+
+An demonstration topology ``topology_with_adder.pothos`` is included
+along with the simple adder block. Simply open this topology
+in the Pothos GUI and the block will be compiled automatically.
