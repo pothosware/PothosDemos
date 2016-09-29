@@ -96,8 +96,8 @@
                         }
                     ],
                     "path" : "\/comms\/noise_source",
-                    "positionX" : 165,
-                    "positionY" : 307,
+                    "positionX" : 148,
+                    "positionY" : 251,
                     "properties" : [
                         {
                             "key" : "dtype",
@@ -127,7 +127,7 @@
                     "rotation" : 0,
                     "selected" : false,
                     "what" : "Block",
-                    "zValue" : 19
+                    "zValue" : 29
                 },
                 {
                     "affinityZone" : "",
