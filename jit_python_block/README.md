@@ -26,7 +26,7 @@ in a source code repository. Pothos will automatically rebuild
 on plugin reload if the local source in the repository is changed.
 
 ```
-cd pothos-demos/jit_cpp_block
+cd pothos-demos/jit_python_block
 mkdir -p ${HOME}/.config/Pothos/modules/examples
 ln -sf $(pwd) ${HOME}/.config/Pothos/modules/examples/simple_python_adder
 ```
@@ -38,7 +38,7 @@ Use this option when installing processing IP permanently,
 like from a larger build system or package manager.
 
 ```
-cd pothos-demos/jit_cpp_block
+cd pothos-demos/jit_python_block
 mkdir -p /usr/local/share/Pothos/modules/examples
 cp -r . /usr/local/share/Pothos/modules/examples/simple_python_adder
 ```
