@@ -244,7 +244,7 @@
                     "properties": [
                         {
                             "key": "type",
-                            "value": "\"LOW_PASS\""
+                            "value": "\"SINC\""
                         },
                         {
                             "key": "band",
@@ -296,9 +296,9 @@
                         }
                     ],
                     "rotation": 0,
-                    "selected": false,
+                    "selected": true,
                     "what": "Block",
-                    "zValue": 225
+                    "zValue": 228
                 },
                 {
                     "affinityZone": "",
@@ -369,9 +369,9 @@
                         }
                     ],
                     "rotation": 0,
-                    "selected": true,
+                    "selected": false,
                     "what": "Block",
-                    "zValue": 226
+                    "zValue": 227
                 },
                 {
                     "affinityZone": "",
