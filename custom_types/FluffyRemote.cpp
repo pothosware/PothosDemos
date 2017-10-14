@@ -31,7 +31,7 @@ void demo(const std::string &uri)
     //copy the local data back into a second remote object
     //and make a change to the copy on the remote end
     auto remoteData2 = env->makeProxy(localData);
-    remoteData2.callVoid("setFluff", 987);
+    remoteData2.call("setFluff", 987);
     std::cout << "FluffyRemote2: fluff=" << remoteData2.call<int>("getFluff") << std::endl;
     std::cout << "FluffyRemote2: wiggles=" << remoteData2.get<std::string>("wiggles") << std::endl;
 
