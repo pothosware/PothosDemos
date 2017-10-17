@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 2.8.9)
 project(CustomTypes CXX)
 
-find_package(Pothos "0.4.0" CONFIG REQUIRED)
+find_package(Pothos "0.6.0" CONFIG REQUIRED)
 include(PothosPythonUtil)
 
 ########################################################################
