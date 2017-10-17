@@ -24,7 +24,7 @@ void demo(const std::string &uri)
 
     //get a FluffyData locally using the FluffyData class definition
     //only this code snippet needs the #include "FluffyData.hpp"
-    auto localData = remoteData.convert<FluffyData>();
+    FluffyData localData = remoteData;
     std::cout << "FluffyLocal: fluff=" << localData.getFluff() << std::endl;
     std::cout << "FluffyLocal: wiggles=" << localData.wiggles << std::endl;
 
