@@ -38,9 +38,9 @@ public:
         auto inPort0 = this->input(0);
         auto inPort1 = this->input(1);
         auto outPort = this->output(0);
-        const auto &inBuff0 = inPort0->buffer().as<const float *>();
-        const auto &inBuff1 = inPort1->buffer().as<const float *>();
-        const auto &outBuff = outPort->buffer().as<float *>();
+        const float *inBuff0 = inPort0->buffer();
+        const float *inBuff1 = inPort1->buffer();
+        float *outBuff = outPort->buffer();
 
         //perform the addition operation
         for (size_t i = 0; i < N; i++)
